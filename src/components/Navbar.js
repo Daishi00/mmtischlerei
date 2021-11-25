@@ -53,9 +53,12 @@ const Wrapper = styled.nav`
   margin: 2rem;
   margin-top: 1.5rem;
   max-width: var(--max-width);
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
   align-items: center;
   position: relative;
+  @media screen and (min-width: 980px) {
+    grid-template-columns: 2fr 1fr;
+  }
 
   .nav-header {
     display: flex;
@@ -75,7 +78,15 @@ const Wrapper = styled.nav`
         gap: 0.5rem;
 
         p {
+          font-size: 0.6rem;
           margin: 0;
+
+          @media screen and (min-width: 480px) {
+            font-size: 0.8rem;
+          }
+          @media screen and (min-width: 980px) {
+            font-size: 1rem;
+          }
         }
       }
     }
