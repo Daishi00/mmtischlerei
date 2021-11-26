@@ -4,9 +4,10 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { BsFillTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs"
 import lang from "../images/lang.svg"
+import pageLinks from "../constants/links"
 import { AiOutlineMenu } from "react-icons/ai"
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   return (
     <Wrapper>
       <div className="nav-header">
@@ -28,20 +29,18 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <AiOutlineMenu className="burger" />
+      <button className="btn-menu" onClick={toggleSidebar}>
+        <AiOutlineMenu className="burger" />
+      </button>
       <div className="nav-links">
-        <Link to="/" className="btn">
-          Home
-        </Link>
-        <Link to="/offer" className="btn">
-          Oferta
-        </Link>
-        <Link to="/gallery" className="btn">
-          Galeria
-        </Link>
-        <Link to="/contact" className="btn">
-          Kontakt
-        </Link>
+        {pageLinks.map(link => {
+          const { id, text, url } = link
+          return (
+            <Link key={id} to={url} className="btn">
+              {text}
+            </Link>
+          )
+        })}
         <img src={lang} className="lang" />
       </div>
     </Wrapper>
@@ -50,7 +49,7 @@ const Navbar = () => {
 
 const Wrapper = styled.nav`
   display: grid;
-  margin: 2rem;
+  margin: 0 auto 2rem auto;
   margin-top: 1.5rem;
   max-width: var(--max-width);
   grid-template-columns: 4fr 1fr;
@@ -67,6 +66,7 @@ const Wrapper = styled.nav`
     padding-bottom: 10px;
     border-bottom: solid 2px #b08968;
     z-index: -1001;
+    margin-left: 2rem;
 
     .nav-contact {
       display: flex;
@@ -76,6 +76,7 @@ const Wrapper = styled.nav`
       .nav-contact-option {
         display: flex;
         gap: 0.5rem;
+        align-items: center;
 
         p {
           font-size: 0.6rem;
@@ -92,17 +93,18 @@ const Wrapper = styled.nav`
     }
   }
 
-  .burger {
-    width: 2rem;
-    height: auto;
+  .btn-menu {
+    background: none;
+    border: none;
     position: absolute;
     top: 0rem;
-    right: 0rem;
-    color: var(--clr-primary-1);
-    &:hover {
-      cursor: pointer;
+    right: 2rem;
+    cursor: pointer;
+    .burger {
+      width: 2rem;
+      height: auto;
+      color: var(--clr-primary-1);
     }
-
     @media screen and (min-width: 980px) {
       display: none;
     }

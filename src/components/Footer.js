@@ -17,6 +17,7 @@ const Wrapper = styled.footer`
 
   p {
     margin: 0;
+    font-weight: bold;
   }
 `
 

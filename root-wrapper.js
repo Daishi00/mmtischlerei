@@ -41,7 +41,7 @@ Variables
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --max-width: 1440px
+  --max-width: 1560px
 }
 /*
 =============== 
@@ -122,6 +122,7 @@ p {
   h3,
   h4 {
     line-height: 1;
+    font-weight: bold;
   }
 }
 /*  global classes */

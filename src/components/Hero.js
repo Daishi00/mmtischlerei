@@ -123,7 +123,6 @@ const Wrapper = styled.section`
       }
 
       h2 {
-        font-weight: bold;
         font-size: 1.5rem;
         @media screen and (min-width: 980px) {
           font-size: 2rem;
