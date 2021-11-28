@@ -2,7 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import squareline from "../images/squareline.svg"
 import styled from "styled-components"
-
+import LinkButton from "./LinkButton"
 const Hero = () => {
   return (
     <>
@@ -30,6 +30,7 @@ const Hero = () => {
               <li>Meble na poddasza i skosy</li>
               <li>Meble biurowe</li>
             </ul>
+            <LinkButton text="Oferta" to="/offer" />
           </article>
         </div>
         <div className="section-offer reverse">
@@ -51,6 +52,7 @@ const Hero = () => {
               <li>Potazacja</li>
               <li>Kamieniowanie</li>
             </ul>
+            <LinkButton text="Oferta" to="/offer" />
           </article>
         </div>
       </Wrapper>
@@ -61,6 +63,7 @@ const Hero = () => {
 const Wrapper = styled.section`
   margin: 3rem auto;
   max-width: var(--max-width);
+
   position: relative;
 
   .section-offer {
@@ -100,6 +103,7 @@ const Wrapper = styled.section`
       display: flex;
       height: 100%;
       padding: 1.5rem;
+      gap: 1rem;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
@@ -123,9 +127,28 @@ const Wrapper = styled.section`
       }
 
       h2 {
+        display: inline;
         font-size: 1.5rem;
+        margin: 0;
+        padding-bottom: 1rem;
+        border-bottom: var(--border-bottom);
+
         @media screen and (min-width: 980px) {
           font-size: 2rem;
+        }
+      }
+      .btn {
+        border-radius: 2rem;
+        border: 0px;
+        background: #40916c;
+        font-weight: bold;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        @media screen and (min-width: 980px) {
+          font-size: 1.5rem;
         }
       }
 
@@ -133,11 +156,11 @@ const Wrapper = styled.section`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
         height: 100%;
 
         li {
           font-size: 1rem;
-
           @media screen and (min-width: 980px) {
             font-size: 1.5rem;
           }
@@ -162,7 +185,7 @@ const Background = styled.div`
     top: 0;
     right: 0;
     width: 40vw;
-    background-color: var(--clr-background);
+    background-color: var(--clr-background-brown);
     height: 100vh;
     z-index: -1000;
   }

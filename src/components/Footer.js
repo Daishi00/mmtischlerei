@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Footer = () => {
   return (
     <Wrapper>
-      <p>© {new Date().getFullYear()} M&M TISCHLEREI </p>
+      <p>M&M Tischlerei</p>
     </Wrapper>
   )
 }
@@ -14,6 +14,7 @@ const Wrapper = styled.footer`
   background-color: var(--clr-primary-1);
   display: grid;
   place-items: center;
+  margin-top: 2rem;
 
   p {
     margin: 0;

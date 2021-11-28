@@ -1,24 +1,36 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-const Category = ({ categories: data }) => {
-  const [categories, setCategories] = React.useState(data)
+import { Link } from "gatsby"
+import { motion } from "framer-motion"
+import slugify from "slugify"
+const Category = ({ categories }) => {
   return (
     <Wrapper>
       {categories.map(category => {
         const { id } = category
-        const { name, image } = category.data
+        const { title, image } = category.data
         console.log(getImage(image.localFiles[0]))
 
         return (
-          <div className="category-info" key={id}>
-            <GatsbyImage
-              image={getImage(image.localFiles[0])}
-              alt={name}
-              className="img"
-            />
-            <p>{name}</p>
-          </div>
+          <Link to={`/gallery/${slugify(title)}`}>
+            <motion.div
+              className="category-info"
+              key={id}
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.5 },
+              }}
+              whileTap={{ scale: 1 }}
+            >
+              <GatsbyImage
+                image={getImage(image.localFiles[0])}
+                alt={title}
+                className="img"
+              />
+              <p>{title}</p>
+            </motion.div>
+          </Link>
         )
       })}
     </Wrapper>
@@ -43,6 +55,7 @@ const Wrapper = styled.div`
   .category-info {
     width: 10rem;
     height: 6rem;
+    cursor: pointer;
 
     @media screen and (min-width: 660px) {
       width: 18rem;
@@ -59,10 +72,10 @@ const Wrapper = styled.div`
       display: grid;
       place-items: center;
       height: 2rem;
-      background-color: var(--clr-background);
+      background: var(--clr-background-brown);
       font-size: 0.6rem;
       font-weight: bold;
-      text-transform: uppercase;
+      text-transform: capitalize;
       letter-spacing: 0.1rem;
       border-radius: 0 0 5px 5px;
       margin: 0;

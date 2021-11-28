@@ -49,12 +49,11 @@ const Navbar = ({ toggleSidebar }) => {
 
 const Wrapper = styled.nav`
   display: grid;
-  margin: 0 auto 2rem auto;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto 2rem auto;
+  width: 95%;
   max-width: var(--max-width);
   grid-template-columns: 4fr 1fr;
   align-items: center;
-  position: relative;
   @media screen and (min-width: 980px) {
     grid-template-columns: 2fr 1fr;
   }
@@ -64,9 +63,8 @@ const Wrapper = styled.nav`
     flex-direction: row;
     gap: 1rem;
     padding-bottom: 10px;
-    border-bottom: solid 2px #b08968;
+    border-bottom: var(--border-bottom);
     z-index: -1001;
-    margin-left: 2rem;
 
     .nav-contact {
       display: flex;
@@ -97,8 +95,8 @@ const Wrapper = styled.nav`
     background: none;
     border: none;
     position: absolute;
-    top: 0rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1rem;
     cursor: pointer;
     .burger {
       width: 2rem;

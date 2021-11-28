@@ -1,5 +1,6 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
+import "@fontsource/poppins"
 
 const GlobalStyle = createGlobalStyle`
 /*
@@ -10,7 +11,8 @@ Variables
 
 :root {
   --clr-primary-1: #b08968;
-  --clr-background: #ede0d4;
+  --clr-background-grey: #f3f4f6;
+  --clr-background-brown: #ede0d4;
 
   /* lighter shades of primary color */
   --clr-primary-6: hsl(21, 57%, 50%);
@@ -41,6 +43,7 @@ Variables
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --border-bottom: 2px solid var(--clr-primary-1);
   --max-width: 1560px
 }
 /*
@@ -55,10 +58,11 @@ Global Styles
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: -apple-system, "Poppins", sans-serif;
+
 }
 body {
-  font-family: -apple-system, "Rubik", sans-serif;
-  background: var(--clr-white);
+  background: var(--clr-background-grey);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -83,7 +87,6 @@ h4 {
   letter-spacing: var(--spacing);
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-weight: 400;
 }
 h1 {
   font-size: 2rem;

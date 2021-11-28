@@ -61,8 +61,8 @@ const Wrapper = styled(motion.aside)`
     background: none;
     border: none;
     position: absolute;
-    top: 1.5rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1rem;
     cursor: pointer;
 
     .exit-icon {
