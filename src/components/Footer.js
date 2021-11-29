@@ -1,12 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-
+import Header from "./Language"
 const Footer = () => {
-  return (
-    <Wrapper>
-      <p>M&M Tischlerei</p>
-    </Wrapper>
-  )
+  return <Wrapper></Wrapper>
 }
 
 const Wrapper = styled.footer`

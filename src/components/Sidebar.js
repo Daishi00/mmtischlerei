@@ -4,6 +4,7 @@ import pageLinks from "../constants/links"
 import { BsXLg } from "react-icons/bs"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
+import Language from "./Language"
 
 const variants = {
   hidden: {
@@ -26,6 +27,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <button className="btn" onClick={toggleSidebar}>
             <BsXLg className="exit-icon" />
           </button>
+
           <div className="sidebar-container">
             <ul className="sidebar-links">
               {pageLinks.map(link => {

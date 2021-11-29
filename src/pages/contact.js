@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/Layout"
-
+import Header from "../components/Language"
 const Contact = () => {
   return (
     <Layout>
       <Wrapper>
-        .<h4>Telefon (Deutsch, English, Polski):</h4>
+        <h4>Telefon (Deutsch, English, Polski):</h4>
         <p>+48 791 756 101 +48 503 586 040</p>
         <h4>E-mail:</h4>
         <p>mmtischlerei@gmail.com</p>

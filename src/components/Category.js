@@ -1,19 +1,24 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+import { Trans, Link } from "gatsby-plugin-react-i18next"
 import { motion } from "framer-motion"
 import slugify from "slugify"
 const Category = ({ categories }) => {
+  console.log(categories)
+
   return (
     <Wrapper>
       {categories.map(category => {
         const { id } = category
         const { title, image } = category.data
-        console.log(getImage(image.localFiles[0]))
 
         return (
-          <Link to={`/gallery/${slugify(title)}`}>
+          <Link
+            to={`/gallery/${slugify(title, {
+              lower: true,
+            })}`}
+          >
             <motion.div
               className="category-info"
               key={id}
@@ -28,7 +33,9 @@ const Category = ({ categories }) => {
                 alt={title}
                 className="img"
               />
-              <p>{title}</p>
+              <p>
+                <Trans>{title}</Trans>
+              </p>
             </motion.div>
           </Link>
         )

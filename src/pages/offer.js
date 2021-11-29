@@ -3,12 +3,15 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
+import { Trans } from "gatsby-plugin-react-i18next"
 import Category from "../components/Category"
 
 const Offer = ({ data }) => {
   const {
     allAirtable: { nodes: categories },
   } = data
+
+  // const {locales:{locales}} = lang
 
   return (
     <Layout>
@@ -23,12 +26,13 @@ const Offer = ({ data }) => {
           />
           <div className="offer-info">
             <h2>
-              Poza ofertą poniżej oferujemy szeroko pojęte usługi stolarskie.
-              Zachęcamy do kontaktu telefonicznego.
+              <Trans>
+                Poza ofertą poniżej oferujemy szeroko pojęte usługi stolarskie.
+                Zachęcamy do kontaktu telefonicznego.
+              </Trans>
             </h2>
           </div>
         </div>
-
         <Category categories={categories} />
       </Wrapper>
     </Layout>
@@ -36,7 +40,7 @@ const Offer = ({ data }) => {
 }
 
 export const query = graphql`
-  {
+  query allOffers($language: String) {
     allAirtable {
       nodes {
         data {
@@ -44,12 +48,21 @@ export const query = graphql`
           image {
             localFiles {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
               }
             }
           }
         }
         id
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
       }
     }
   }

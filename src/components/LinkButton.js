@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { Link } from "gatsby"
+import { Link, Trans } from "gatsby-plugin-react-i18next"
 import { BsArrowLeftShort } from "react-icons/bs"
 
-const LinkButton = ({ text, to, icon }) => {
+const LinkButton = ({ text, to, icon, lang }) => {
   return (
     <Link to={to}>
       <Wrapper
@@ -15,7 +15,7 @@ const LinkButton = ({ text, to, icon }) => {
         }}
       >
         {icon === "arrowLeft" ? <BsArrowLeftShort className="icon" /> : null}{" "}
-        {text}
+        <Trans>{text}</Trans>
       </Wrapper>
     </Link>
   )

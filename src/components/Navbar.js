@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { BsFillTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs"
-import lang from "../images/lang.svg"
 import pageLinks from "../constants/links"
 import { AiOutlineMenu } from "react-icons/ai"
+import { Link } from "gatsby-plugin-react-i18next"
+import Language from "./Language"
 
 const Navbar = ({ toggleSidebar }) => {
   return (
@@ -41,7 +41,9 @@ const Navbar = ({ toggleSidebar }) => {
             </Link>
           )
         })}
-        <img src={lang} className="lang" />
+      </div>
+      <div className="lang">
+        <Language />
       </div>
     </Wrapper>
   )
@@ -52,10 +54,10 @@ const Wrapper = styled.nav`
   margin: 1.5rem auto 2rem auto;
   width: 95%;
   max-width: var(--max-width);
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 1fr 0.1fr;
   align-items: center;
   @media screen and (min-width: 980px) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 0.1fr;
   }
 
   .nav-header {
@@ -79,6 +81,7 @@ const Wrapper = styled.nav`
         p {
           font-size: 0.6rem;
           margin: 0;
+          font-weight: bold;
 
           @media screen and (min-width: 480px) {
             font-size: 0.8rem;
@@ -124,14 +127,6 @@ const Wrapper = styled.nav`
       gap: 2rem;
     }
 
-    .lang {
-      width: 3rem;
-
-      @media screen and (min-width: 1250px) {
-        width: 3.5rem;
-      }
-    }
-
     .btn {
       transition: var(--transition);
 
@@ -139,6 +134,14 @@ const Wrapper = styled.nav`
         color: var(--clr-primary-1);
         box-shadow: 0px 2px #b08968;
       }
+    }
+  }
+  .lang {
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
+    @media screen and (min-width: 980px) {
+      right: 1rem;
     }
   }
 `

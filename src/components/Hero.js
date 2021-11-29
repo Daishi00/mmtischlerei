@@ -3,7 +3,10 @@ import React from "react"
 import squareline from "../images/squareline.svg"
 import styled from "styled-components"
 import LinkButton from "./LinkButton"
-const Hero = () => {
+import { Trans } from "gatsby-plugin-react-i18next"
+
+const Hero = lang => {
+  console.log(lang)
   return (
     <>
       <Background />
@@ -17,20 +20,41 @@ const Hero = () => {
             alt="kitchen"
           />
           <article className="offer-info">
-            <img src={squareline} className="squareline top-right" />
-            <img src={squareline} className="squareline bottom-left" />
+            <img
+              src={squareline}
+              className="squareline top-right"
+              alt="squareline"
+            />
+            <img
+              src={squareline}
+              className="squareline bottom-left"
+              alt="squareline"
+            />
             <h2>
-              Produkcja mebli <br />
-              na wymiar
+              <Trans>Produkcja mebli na wymiar</Trans>
             </h2>
             <ul>
-              <li>Kuchnie</li>
-              <li>Szafy wnękowe</li>
-              <li>Garderoby</li>
-              <li>Meble na poddasza i skosy</li>
-              <li>Meble biurowe</li>
+              <li>
+                <Trans>Meble kuchenne</Trans>
+              </li>
+
+              <li>
+                <Trans>Meble na poddasza i skosy</Trans>
+              </li>
+              <li>
+                <Trans>Meble łazienkowe</Trans>
+              </li>
+              <li>
+                <Trans>Meble biurowe</Trans>
+              </li>
+              <li>
+                <Trans>Szafy wnękowe</Trans>
+              </li>
+              <li>
+                <Trans>Garderoby</Trans>
+              </li>
             </ul>
-            <LinkButton text="Oferta" to="/offer" />
+            <LinkButton text="Oferta" to="/offer" lang={lang} />
           </article>
         </div>
         <div className="section-offer reverse">
@@ -42,17 +66,37 @@ const Hero = () => {
             alt="carpenter"
           />
           <article className="offer-info">
-            <img src={squareline} className="squareline top-right" />
-            <img src={squareline} className="squareline bottom-left" />
-            <h2>Usługi stolarskie</h2>
+            <img
+              src={squareline}
+              className="squareline top-right"
+              alt="squareline"
+            />
+            <img
+              src={squareline}
+              className="squareline bottom-left"
+              alt="squareline"
+            />
+            <h2>
+              <Trans>Usługi stolarskie</Trans>
+            </h2>
             <ul>
-              <li>Toczenie</li>
-              <li>Frezowanie</li>
-              <li>Renowacja</li>
-              <li>Potazacja</li>
-              <li>Kamieniowanie</li>
+              <li>
+                <Trans>Toczenie</Trans>
+              </li>
+              <li>
+                <Trans>Frezowanie</Trans>
+              </li>
+              <li>
+                <Trans>Renowacja</Trans>
+              </li>
+              <li>
+                <Trans>Potazacja</Trans>
+              </li>
+              <li>
+                <Trans>Kamieniowanie</Trans>
+              </li>
             </ul>
-            <LinkButton text="Oferta" to="/offer" />
+            <LinkButton text="Oferta" to="/offer" lang={lang} />
           </article>
         </div>
       </Wrapper>
@@ -61,10 +105,12 @@ const Hero = () => {
 }
 
 const Wrapper = styled.section`
-  margin: 3rem auto;
+  margin: 2rem auto;
   max-width: var(--max-width);
-
+  width: 95%;
   position: relative;
+  display: grid;
+  grid-gap: 2rem;
 
   .section-offer {
     grid-template-columns: 1fr;
@@ -72,15 +118,14 @@ const Wrapper = styled.section`
     grid-auto-flow: dense;
     justify-content: center;
     place-items: center;
-    margin: 2rem;
-    grid-gap: 3rem;
+    grid-gap: 2rem;
     @media screen and (min-width: 980px) {
       grid-template-columns: 2fr 1fr;
     }
 
     .img {
       margin: 0 auto;
-      width: 90%;
+      width: 100%;
       border-radius: 10px;
       grid-row: 2;
       filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
@@ -99,7 +144,7 @@ const Wrapper = styled.section`
     }
 
     .offer-info {
-      width: 80%;
+      width: 100%;
       display: flex;
       height: 100%;
       padding: 1.5rem;
@@ -137,21 +182,6 @@ const Wrapper = styled.section`
           font-size: 2rem;
         }
       }
-      .btn {
-        border-radius: 2rem;
-        border: 0px;
-        background: #40916c;
-        font-weight: bold;
-        cursor: pointer;
-        width: auto;
-        height: auto;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        @media screen and (min-width: 980px) {
-          font-size: 1.5rem;
-        }
-      }
-
       ul {
         display: flex;
         flex-direction: column;

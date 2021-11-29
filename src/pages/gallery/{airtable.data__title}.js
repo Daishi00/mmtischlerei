@@ -1,28 +1,30 @@
 import React from "react"
 import Layout from "../../components/Layout"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import LinkButton from "../../components/LinkButton"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 
 const CategoryTemplate = ({ data }) => {
   const { description, title, image } = data.airtable.data
-  const { id } = data.airtable
 
   return (
     <Layout>
       <Wrapper>
         <article className="category-info">
-          <h1>{title}</h1>
-          <p>{description}</p>
+          <h1>
+            <Trans>{title}</Trans>
+          </h1>
+          <p>
+            <Trans>{description}</Trans>
+          </p>
           <LinkButton text="Wróć" to="/offer" icon="arrowLeft" />
         </article>
         <section className="img-wrapper">
           {image.localFiles.map((item, index) => {
-            console.log(item)
             return (
-              <div className={`div-${index}`}>
+              <div className={`div-${index}`} key={index}>
                 <GatsbyImage
                   image={getImage(item)}
                   alt={title}
@@ -39,7 +41,7 @@ const CategoryTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query getSingleCategory($data__title: String) {
+  query getSingleCategory($data__title: String, $language: String) {
     airtable(data: { title: { eq: $data__title } }) {
       data {
         description
@@ -47,15 +49,24 @@ export const query = graphql`
         image {
           localFiles {
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
             }
           }
         }
       }
-      id
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
     }
   }
 `
+
 const Wrapper = styled.section`
   width: 95%;
   display: grid;
