@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-import { Trans } from "gatsby-plugin-react-i18next"
 
 const SEO = ({ title, description, image }) => {
   const { pathname } = useLocation()

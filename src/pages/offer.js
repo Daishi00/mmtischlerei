@@ -48,7 +48,10 @@ const Offer = ({ data }) => {
 
 export const query = graphql`
   query allOffers($language: String) {
-    allAirtable(sort: { fields: data___title, order: ASC }) {
+    allAirtable(
+      sort: { fields: data___title, order: ASC }
+      filter: { table: { eq: "Categories" } }
+    ) {
       nodes {
         data {
           title

@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Header from "./Language"
 const Footer = () => {
   return (
     <Wrapper>

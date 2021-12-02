@@ -5,7 +5,7 @@ import de from "../images/flags/de.svg"
 import gb from "../images/flags/gb.svg"
 import { IoIosArrowDown } from "react-icons/io"
 import { useState } from "react"
-import { Link, useI18next, I18nextContext } from "gatsby-plugin-react-i18next"
+import { useI18next, I18nextContext } from "gatsby-plugin-react-i18next"
 import { AnimatePresence, motion } from "framer-motion"
 
 const variants = {
@@ -58,7 +58,7 @@ const Lang = () => {
               ) : (
                 <li key={lng}>
                   <a
-                    href="#"
+                    href="/#"
                     onClick={e => {
                       e.preventDefault()
                       changeLanguage(lng)

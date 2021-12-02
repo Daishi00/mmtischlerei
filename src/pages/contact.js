@@ -2,14 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Contact = ({ data }) => {
   const { t } = useTranslation()
   return (
     <>
-      <SEO title={t("Kontakt")} />
+      <Seo title={t("Kontakt")} />
       <Layout data={data}>
         <Wrapper>
           <h4>Telefon (Deutsch, English, Polski):</h4>
