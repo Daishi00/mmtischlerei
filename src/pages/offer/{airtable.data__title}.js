@@ -10,6 +10,7 @@ import Seo from "../../components/Seo"
 
 const CategoryTemplate = ({ data, location }) => {
   const { description, title, image } = data.airtable.data
+  console.log(data.airtable.data)
 
   const nextCategory = (title, { nodes } = data.allAirtable) => {
     let nextCategory = ""
@@ -88,10 +89,7 @@ const CategoryTemplate = ({ data, location }) => {
 
 export const query = graphql`
   query getSingleCategory($data__title: String, $language: String) {
-    airtable(
-      data: { title: { eq: $data__title } }
-      table: { eq: "Categories" }
-    ) {
+    airtable(data: { title: { eq: $data__title } }) {
       data {
         description
         title

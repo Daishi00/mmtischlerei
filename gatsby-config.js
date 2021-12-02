@@ -36,6 +36,8 @@ module.exports = {
           {
             baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
             tableName: `Gallery`,
+            queryName: `Gallery`,
+            separateNodeType: true,
             mapping: { image: `fileNode` },
           },
         ],

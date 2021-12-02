@@ -14,7 +14,7 @@ import { GatsbyContext } from "../context/context"
 import { MdOutlineLoupe } from "react-icons/md"
 
 const Gallery = ({ data }) => {
-  const { nodes: gallery } = data.allAirtable
+  const { nodes: gallery } = data.allAirtableGallery
   const { t } = useTranslation()
   const { selectImage, handleSelectImage } = useContext(GatsbyContext)
 
@@ -60,10 +60,7 @@ const Gallery = ({ data }) => {
 
 export const query = graphql`
   query AllGallery($language: String) {
-    allAirtable(
-      filter: { table: { eq: "Gallery" } }
-      sort: { fields: data___date, order: DESC }
-    ) {
+    allAirtableGallery(sort: { fields: data___date, order: DESC }) {
       nodes {
         data {
           title
