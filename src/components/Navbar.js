@@ -4,7 +4,9 @@ import { StaticImage } from "gatsby-plugin-image"
 import { BsFillTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs"
 import pageLinks from "../constants/links"
 import { AiOutlineMenu } from "react-icons/ai"
-import { Link } from "gatsby-plugin-react-i18next"
+import { Link } from "gatsby"
+import { Trans } from "gatsby-plugin-react-i18next"
+
 import Language from "./Language"
 
 const Navbar = ({ toggleSidebar }) => {
@@ -37,7 +39,7 @@ const Navbar = ({ toggleSidebar }) => {
           const { id, text, url } = link
           return (
             <Link key={id} to={url} className="btn">
-              {text}
+              <Trans>{text}</Trans>
             </Link>
           )
         })}
@@ -54,10 +56,10 @@ const Wrapper = styled.nav`
   margin: 1.5rem auto 2rem auto;
   width: 95%;
   max-width: var(--max-width);
-  grid-template-columns: 1fr 0.1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   @media screen and (min-width: 980px) {
-    grid-template-columns: 2fr 1fr 0.1fr;
+    grid-template-columns: 2fr 1fr;
   }
 
   .nav-header {
@@ -138,9 +140,10 @@ const Wrapper = styled.nav`
   }
   .lang {
     position: absolute;
-    top: 1rem;
-    right: 4rem;
+    top: 4rem;
+    right: 1rem;
     @media screen and (min-width: 980px) {
+      top: 1rem;
       right: 1rem;
     }
   }

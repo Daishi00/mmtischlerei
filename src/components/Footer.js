@@ -2,7 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import Header from "./Language"
 const Footer = () => {
-  return <Wrapper></Wrapper>
+  return (
+    <Wrapper>
+      <p> © {new Date().getFullYear()} M&M Tischlerei</p>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.footer`

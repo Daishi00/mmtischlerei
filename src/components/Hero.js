@@ -6,10 +6,8 @@ import LinkButton from "./LinkButton"
 import { Trans } from "gatsby-plugin-react-i18next"
 
 const Hero = lang => {
-  console.log(lang)
   return (
     <>
-      <Background />
       <Wrapper>
         <div className="section-offer">
           <StaticImage
@@ -203,21 +201,6 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 2fr;
       margin-top: 5rem;
     }
-  }
-`
-
-const Background = styled.div`
-  display: none;
-  @media screen and (min-width: 980px) {
-    display: block;
-    position: fixed;
-    margin: 0 auto;
-    top: 0;
-    right: 0;
-    width: 40vw;
-    background-color: var(--clr-background-brown);
-    height: 100vh;
-    z-index: -1000;
   }
 `
 

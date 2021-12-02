@@ -1,14 +1,17 @@
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
+import Seo from "../components/Seo"
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
-      <Hero lang={data} />
-    </Layout>
+    <>
+      <Seo title="Home" />
+      <Layout data={data}>
+        <Hero data={data} />
+      </Layout>
+    </>
   )
 }
 

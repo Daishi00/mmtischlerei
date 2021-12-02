@@ -3,9 +3,18 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: `M&M Tischlerei`,
+    description: ``,
+    titleTemplate: `%s | M&M Tischlerei`,
+    url: `https://localhost:8000/`,
+    image: `furniture.jpg`,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-transition-link`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,13 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     {

@@ -4,7 +4,7 @@ import "@fontsource/poppins"
 
 const GlobalStyle = createGlobalStyle`
 /*
-=============== 
+===============
 Variables
 ===============
 */
@@ -47,7 +47,7 @@ Variables
   --max-width: 1560px
 }
 /*
-=============== 
+===============
 Global Styles
 ===============
 */
@@ -130,16 +130,13 @@ p {
 }
 /*  global classes */
 
-
-
-
 `
 
 export const wrapRootElement = ({ element }) => {
   return (
     <>
-      <GlobalStyle />
       {element}
+      <GlobalStyle />
     </>
   )
 }

@@ -4,25 +4,17 @@ import pageLinks from "../constants/links"
 import { BsXLg } from "react-icons/bs"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
-import Language from "./Language"
-
-const variants = {
-  hidden: {
-    x: "0vw",
-  },
-  visible: {
-    x: "100vw",
-  },
-}
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <AnimatePresence>
       {isOpen && (
         <Wrapper
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, x: 1000 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ ease: "easeOut", duration: 0.7 }}
+          key="sidebar"
+          exit={{ opacity: 0, x: 1000 }}
         >
           <button className="btn" onClick={toggleSidebar}>
             <BsXLg className="exit-icon" />

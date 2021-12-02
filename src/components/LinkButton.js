@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { Link, Trans } from "gatsby-plugin-react-i18next"
-import { BsArrowLeftShort } from "react-icons/bs"
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs"
 
 const LinkButton = ({ text, to, icon, lang }) => {
   return (
@@ -14,8 +14,9 @@ const LinkButton = ({ text, to, icon, lang }) => {
           transition: { duration: 0.2 },
         }}
       >
-        {icon === "arrowLeft" ? <BsArrowLeftShort className="icon" /> : null}{" "}
+        {icon === "arrowLeft" ? <BsArrowLeftShort className="icon" /> : null}
         <Trans>{text}</Trans>
+        {icon === "arrowRight" ? <BsArrowRightShort className="icon" /> : null}
       </Wrapper>
     </Link>
   )

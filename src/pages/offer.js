@@ -3,45 +3,52 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
-import { Trans } from "gatsby-plugin-react-i18next"
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import Category from "../components/Category"
-
+import Project from "../components/Project"
+import Title from "../components/Title"
+import Seo from "../components/Seo"
 const Offer = ({ data }) => {
   const {
     allAirtable: { nodes: categories },
   } = data
 
-  // const {locales:{locales}} = lang
-
+  const { t } = useTranslation()
   return (
-    <Layout>
-      <Wrapper>
-        <div className="img-container">
-          <StaticImage
-            src="../images/tools.jpg"
-            layout="constrained"
-            placeholder="traced-svg"
-            className="img"
-            alt="tools"
-          />
-          <div className="offer-info">
-            <h2>
-              <Trans>
-                Poza ofertą poniżej oferujemy szeroko pojęte usługi stolarskie.
-                Zachęcamy do kontaktu telefonicznego.
-              </Trans>
-            </h2>
+    <>
+      <Seo title={t("Oferta")} />
+      <Layout data={data}>
+        <Wrapper>
+          <div className="img-container">
+            <StaticImage
+              src="../images/tools.jpg"
+              layout="constrained"
+              placeholder="traced-svg"
+              className="img"
+              alt="tools"
+            />
+            <div className="offer-info">
+              <h2>
+                <Trans>
+                  Poza ofertą poniżej oferujemy szeroko pojęte usługi
+                  stolarskie. Zachęcamy do kontaktu telefonicznego.
+                </Trans>
+              </h2>
+            </div>
           </div>
-        </div>
-        <Category categories={categories} />
-      </Wrapper>
-    </Layout>
+          <Title title="Meble na wymiar" />
+          <Project />
+          <Category categories={categories} />
+          <Title title="Usługi stolarskie" />
+        </Wrapper>
+      </Layout>
+    </>
   )
 }
 
 export const query = graphql`
   query allOffers($language: String) {
-    allAirtable {
+    allAirtable(sort: { fields: data___title, order: ASC }) {
       nodes {
         data {
           title
@@ -74,12 +81,17 @@ const Wrapper = styled.div`
   max-width: var(--max-width);
   place-items: center;
   align-items: center;
+  grid-gap: 1rem;
   margin: 0 auto 5rem auto;
+
+  h1 {
+    border-bottom: var(--border-bottom);
+    padding-bottom: 1rem;
+  }
 
   .img-container {
     position: relative;
     width: 95%;
-    margin: 0 2rem 2rem 2rem;
     height: 20rem;
     border-bottom: var(--border-bottom);
     .img {
