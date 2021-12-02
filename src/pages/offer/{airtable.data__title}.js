@@ -88,7 +88,10 @@ const CategoryTemplate = ({ data, location }) => {
 
 export const query = graphql`
   query getSingleCategory($data__title: String, $language: String) {
-    airtable(data: { title: { eq: $data__title } }) {
+    airtable(
+      data: { title: { eq: $data__title } }
+      table: { eq: "Categories" }
+    ) {
       data {
         description
         title
@@ -110,7 +113,10 @@ export const query = graphql`
         }
       }
     }
-    allAirtable(sort: { fields: data___title, order: ASC }) {
+    allAirtable(
+      sort: { fields: data___title, order: ASC }
+      filter: { table: { eq: "Categories" } }
+    ) {
       nodes {
         data {
           title
