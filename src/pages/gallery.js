@@ -108,7 +108,6 @@ const Wrapper = styled.section`
       height: 100%;
       position: relative;
       display: grid;
-      place-items: center;
       cursor: pointer;
       box-shadow: var(--dark-shadow);
       border: none;

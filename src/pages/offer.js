@@ -84,7 +84,7 @@ const Wrapper = styled.div`
   max-width: var(--max-width);
   place-items: center;
   align-items: center;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   margin: 0 auto 5rem auto;
 
   h1 {

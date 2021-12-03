@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   h1 {
     border-bottom: var(--border-bottom);
     padding-bottom: 1rem;
+    display: inline-block;
   }
 `
 

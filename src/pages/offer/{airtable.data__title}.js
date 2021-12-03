@@ -52,14 +52,12 @@ const CategoryTemplate = ({ data, location }) => {
             </p>
             <div className="btn-container">
               <LinkButton
-                text="Wróć"
                 to={`/offer/${slugify(previousCategory(title), {
                   lower: true,
                 })}`}
                 icon="arrowLeft"
               />
               <LinkButton
-                text="Dalej"
                 to={`/offer/${slugify(nextCategory(title), {
                   lower: true,
                 })}`}
@@ -137,6 +135,9 @@ const Wrapper = styled.section`
   .category-info {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    position: relative;
+    margin-bottom: 4rem;
     h1 {
       text-transform: capitalize;
       font-size: 4rem;
@@ -152,6 +153,8 @@ const Wrapper = styled.section`
       display: flex;
       width: 100%;
       justify-content: space-between;
+      position: absolute;
+      bottom: 0rem;
       .btn {
         width: 5rem;
       }

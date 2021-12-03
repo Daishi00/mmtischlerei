@@ -4,7 +4,8 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Seo from "../components/Seo"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import Title from "../components/Title"
+import { motion } from "framer-motion"
 const Contact = ({ data }) => {
   const { t } = useTranslation()
   return (
@@ -12,18 +13,55 @@ const Contact = ({ data }) => {
       <Seo title={t("Kontakt")} />
       <Layout data={data}>
         <Wrapper>
-          <h4>Telefon (Deutsch, English, Polski):</h4>
-          <p>+48 791 756 101 +48 503 586 040</p>
-          <h4>E-mail:</h4>
-          <p>mmtischlerei@gmail.com</p>
-          <h4>Dane firmy:</h4>
-          <p>M&M Tischlerei Andrzej Abramczyk i Jan Kowalski</p>
-          <p>
-            66-620 Gubin, Polska,
-            <br />
-            ul.Fajna 7
-          </p>
-          <p>NIP: 009299292902</p>
+          <section className="contact-info">
+            <Title title="Kontakt" />
+            <h4>Telefon (Deutsch, English, Polski):</h4>
+            <p>+48 791 756 101 +48 503 586 040</p>
+            <h4>E-mail:</h4>
+            <p>mmtischlerei@gmail.com</p>
+            <h4>Dane firmy:</h4>
+            <p>M&M Tischlerei Andrzej Abramczyk i Jan Kowalski</p>
+            <p>
+              66-620 Gubin, Polska,
+              <br />
+              ul.Fajna 7
+            </p>
+            <p>NIP: 009299292902</p>
+          </section>
+          <section>
+            <form
+              className="form contact-form"
+              action="https://formspree.io/f/mdobnvan"
+              method="POST"
+            >
+              <div className="form-row">
+                <label htmlFor="name">Twoje Imię</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div className="form-row">
+                <label htmlFor="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div className="form-row">
+                <label htmlFor="email">Telefon</label>
+                <input type="text" name="phone" id="phone" />
+              </div>
+              <div className="form-row">
+                <label htmlFor="message">Wiadomość</label>
+                <textarea name="message" id="message"></textarea>
+              </div>
+              <motion.button
+                type="submit"
+                className="btn"
+                whileHover={{
+                  backgroundColor: "#e76f51",
+                  transition: { duration: 0.2 },
+                }}
+              >
+                Wyślij
+              </motion.button>
+            </form>
+          </section>
         </Wrapper>
       </Layout>
     </>
@@ -49,6 +87,65 @@ const Wrapper = styled.section`
   width: 95%;
   max-width: var(--max-width);
   margin: 0 auto;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 980px) {
+    grid-template-columns: 2fr 1.5fr;
+  }
+  .contact-info {
+  }
+  .form {
+    display: grid;
+    background: var(--clr-background-brown);
+    padding: 2rem;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: var(--dark-shadow);
+
+    .btn {
+      background-color: #f4a261;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      color: var(--clr-grey-1);
+      cursor: pointer;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .form-row {
+      width: 100%;
+      margin-bottom: 1rem;
+      input {
+        font-size: 1.3rem;
+      }
+
+      input,
+      textarea {
+        background: var(--clr-grey-10);
+        border-radius: 5px;
+        width: 100%;
+        height: 3rem;
+        border: 1px solid var(--clr-grey-8);
+        padding: 0.2rem 0.5rem;
+
+        &:focus {
+          outline: none;
+          border: 2px solid var(--clr-primary-1);
+        }
+      }
+      textarea {
+        min-height: 8rem;
+        max-height: 32rem;
+        font-size: 1.1rem;
+        resize: vertical;
+      }
+    }
+  }
 `
 
 export default Contact

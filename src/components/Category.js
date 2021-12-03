@@ -5,6 +5,7 @@ import { Trans, Link } from "gatsby-plugin-react-i18next"
 import { motion } from "framer-motion"
 import slugify from "slugify"
 const Category = ({ categories }) => {
+  console.log(categories)
   return (
     <Wrapper>
       {categories.map(category => {
@@ -18,7 +19,7 @@ const Category = ({ categories }) => {
             key={id}
           >
             <motion.div
-              className="category-info"
+              className="category-container"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.5 },
@@ -44,43 +45,48 @@ const Category = ({ categories }) => {
 }
 
 const Wrapper = styled.div`
+  width: 70%;
   display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 75%;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  margin-bottom: 2rem;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  grid-auto-rows: 110px;
+  grid-auto-flow: dense;
 
-  @media screen and (min-width: 980px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+  @media screen and (min-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 150px;
   }
 
-  .category-info {
-    cursor: pointer;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 5rem 1.5rem;
-    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+  @media screen and (min-width: 620px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+  }
 
-    @media screen and (min-width: 660px) {
-      grid-template-rows: 10rem 2rem;
-    }
+  @media screen and (min-width: 920px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+  }
+
+  .category-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    cursor: pointer;
+    box-shadow: var(--dark-shadow);
+    border: none;
+    border-radius: 5px;
+    grid-template-rows: 90% 13%;
 
     .img {
+      border-radius: 5px 5px 0 0;
       width: 100%;
       height: 100%;
-      border-radius: 5px 5px 0 0;
     }
 
     .img-info {
-      width: 100%;
-      height: 100%;
       display: grid;
       place-items: center;
+      height: auto;
       background: var(--clr-background-brown);
       border-radius: 0 0 5px 5px;
 
@@ -88,15 +94,17 @@ const Wrapper = styled.div`
         font-size: 0.5rem;
         font-weight: bold;
         text-align: center;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.05rem;
         border-radius: 0 0 5px 5px;
         margin: 0;
-
-        @media screen and (min-width: 660px) {
+        @media screen and (min-width: 480px) {
+          font-size: 0.7rem;
+        }
+        @media screen and (min-width: 620px) {
           font-size: 0.9rem;
         }
-        @media screen and (min-width: 880px) {
-          font-size: 1rem;
+        @media screen and (min-width: 920px) {
+          font-size: 1.1rem;
         }
       }
     }
