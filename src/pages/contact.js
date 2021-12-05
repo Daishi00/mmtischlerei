@@ -1,9 +1,11 @@
+//i18next-extract-mark-ns-start contact-page
+
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Seo from "../components/Seo"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation, Trans } from "gatsby-plugin-react-i18next"
 import Title from "../components/Title"
 import { motion } from "framer-motion"
 const Contact = ({ data }) => {
@@ -15,11 +17,12 @@ const Contact = ({ data }) => {
         <Wrapper>
           <section className="contact-info">
             <Title title="Kontakt" />
-            <h4>Telefon (Deutsch, English, Polski):</h4>
+            <h4>
+              <Trans>Telefon (polski, niemiecki, angielski):</Trans>
+            </h4>
             <p>+48 791 756 101 +48 503 586 040</p>
             <h4>E-mail:</h4>
             <p>mmtischlerei@gmail.com</p>
-            <h4>Dane firmy:</h4>
             <p>M&M Tischlerei Andrzej Abramczyk i Jan Kowalski</p>
             <p>
               66-620 Gubin, Polska,
@@ -35,7 +38,9 @@ const Contact = ({ data }) => {
               method="POST"
             >
               <div className="form-row">
-                <label htmlFor="name">Twoje Imię</label>
+                <label htmlFor="name">
+                  <Trans>Twoje Imię</Trans>
+                </label>
                 <input type="text" name="name" id="name" />
               </div>
               <div className="form-row">
@@ -43,11 +48,15 @@ const Contact = ({ data }) => {
                 <input type="text" name="email" id="email" />
               </div>
               <div className="form-row">
-                <label htmlFor="email">Telefon</label>
+                <label htmlFor="email">
+                  <Trans>Telefon</Trans>
+                </label>
                 <input type="text" name="phone" id="phone" />
               </div>
               <div className="form-row">
-                <label htmlFor="message">Wiadomość</label>
+                <label htmlFor="message">
+                  <Trans>Wiadomość</Trans>
+                </label>
                 <textarea name="message" id="message"></textarea>
               </div>
               <motion.button
@@ -58,7 +67,7 @@ const Contact = ({ data }) => {
                   transition: { duration: 0.2 },
                 }}
               >
-                Wyślij
+                <Trans>Wyślij</Trans>
               </motion.button>
             </form>
           </section>
@@ -70,7 +79,12 @@ const Contact = ({ data }) => {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["translation", "contact-page"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
@@ -94,6 +108,7 @@ const Wrapper = styled.section`
   @media screen and (min-width: 980px) {
     grid-template-columns: 2fr 1.5fr;
   }
+
   .contact-info {
   }
   .form {
