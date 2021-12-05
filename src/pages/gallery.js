@@ -1,7 +1,7 @@
-//i18next-extract-mark-ns-start about-page
+//i18next-extract-mark-ns-start gallery-page
 
 import React from "react"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation, Trans } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
@@ -46,7 +46,9 @@ const Gallery = ({ data }) => {
                   />
                   <div className="img-info ">
                     <MdOutlineLoupe size={64} />
-                    <h4>{title}</h4>
+                    <h4>
+                      <Trans i18nKey={title}>{title}</Trans>
+                    </h4>
                   </div>
                 </button>
               )
@@ -60,11 +62,10 @@ const Gallery = ({ data }) => {
 
 export const query = graphql`
   query AllGallery($language: String) {
-    allAirtableGallery(sort: { fields: data___date, order: DESC }) {
+    allAirtableGallery(sort: { fields: data___Created, order: DESC }) {
       nodes {
         data {
           title
-          date
           image {
             localFiles {
               childImageSharp {
@@ -76,7 +77,12 @@ export const query = graphql`
         id
       }
     }
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["translation", "gallery-page"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
@@ -112,11 +118,11 @@ const Wrapper = styled.section`
       box-shadow: var(--dark-shadow);
       border: none;
       border-radius: 5px;
+      padding: 1rem;
 
       .img {
         width: 100%;
         height: 100%;
-        border-radius: 5px;
       }
       &:hover .img {
         opacity: 0.3;

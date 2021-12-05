@@ -17,6 +17,7 @@ const Wrapper = styled.div`
     border-bottom: var(--border-bottom);
     padding-bottom: 1rem;
     display: inline-block;
+    text-transform: capitalize;
   }
 `
 

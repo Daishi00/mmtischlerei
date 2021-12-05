@@ -16,7 +16,6 @@ const variants = {
 const Lang = () => {
   const context = React.useContext(I18nextContext)
   const { languages, changeLanguage } = useI18next()
-
   const [isOpen, setIsOpen] = useState(false)
 
   return (

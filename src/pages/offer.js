@@ -1,3 +1,5 @@
+//i18next-extract-mark-ns-start offer-page
+
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
@@ -66,7 +68,12 @@ export const query = graphql`
         id
       }
     }
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["translation", "offer-page"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
@@ -90,6 +97,12 @@ const Wrapper = styled.div`
   h1 {
     border-bottom: var(--border-bottom);
     padding-bottom: 1rem;
+  }
+
+  .drag {
+    width: 200px;
+    height: 200px;
+    background-color: red;
   }
 
   .img-container {

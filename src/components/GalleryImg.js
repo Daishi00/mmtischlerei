@@ -3,11 +3,8 @@ import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { GatsbyContext } from "../context/context"
 import { motion, AnimatePresence } from "framer-motion"
-import {
-  MdKeyboardArrowRight,
-  MdKeyboardArrowLeft,
-  MdKeyboardArrowDown,
-} from "react-icons/md"
+import { Trans } from "gatsby-plugin-react-i18next"
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md"
 
 const imgVariants = {
   enter: direction => {
@@ -76,9 +73,14 @@ const GalleryImg = ({ dataSelected, data }) => {
     setPage([page + newDirection, newDirection])
   }
 
+  const swipeConfidenceThreshold = 10000
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity
+  }
+
   return (
     <Wrapper>
-      <Background />
+      <Background onClick={() => handleSelectImage(null)} />
       <div className="img-container">
         <AnimatePresence custom={direction} initial={false} exitBeforeEnter>
           <motion.div
@@ -93,12 +95,29 @@ const GalleryImg = ({ dataSelected, data }) => {
               opacity: { duration: 0.2 },
             }}
             key={id}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x)
+
+              if (swipe < -swipeConfidenceThreshold) {
+                nextImage(data, id)
+              } else if (swipe > swipeConfidenceThreshold) {
+                prevImage(data, id)
+              }
+            }}
           >
             <GatsbyImage
               image={getImage(image.localFiles[0])}
               className="img"
               alt={title}
             />
+            <div className="img-title">
+              <h3>
+                <Trans>{title}</Trans>
+              </h3>
+            </div>
           </motion.div>
         </AnimatePresence>
         <motion.button
@@ -109,15 +128,6 @@ const GalleryImg = ({ dataSelected, data }) => {
           whileHover="hover"
         >
           <MdKeyboardArrowLeft size={96} className="icon" />
-        </motion.button>
-        <motion.button
-          className="btn btn-exit"
-          onClick={() => handleSelectImage(null)}
-          variants={btnVariants}
-          whileTap="tap"
-          whileHover="hover"
-        >
-          <MdKeyboardArrowDown size={96} className="icon" />
         </motion.button>
         <motion.button
           className="btn btn-next"
@@ -167,41 +177,50 @@ const Wrapper = styled.div`
       height: 25rem;
       display: grid;
       place-items: center;
-
+      z-index: 2002;
       @media screen and (min-width: 1020px) {
         height: 35rem;
       }
-    }
-    .btn {
-      position: absolute;
-      border: none;
-      background: none;
-      cursor: pointer;
 
+      .img {
+        pointer-events: none;
+      }
+    }
+    .img-title {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      display: grid;
+      place-items: center;
+      text-transform: capitalize;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem;
+      border-radius: 0 0 5px 5px;
+
+      h3 {
+        margin: 0;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      display: none;
+      @media screen and (min-width: 640px) {
+        display: block;
+        position: absolute;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
       .icon {
         color: #fff;
       }
     }
     .btn-next {
-      right: -4.4rem;
-
-      @media screen and (min-width: 640px) {
-        right: -6rem;
-      }
+      right: -6rem;
     }
     .btn-prev {
-      left: -4.4rem;
-
-      @media screen and (min-width: 640px) {
-        left: -6rem;
-      }
-    }
-    .btn-exit {
-      bottom: -4.4rem;
-
-      @media screen and (min-width: 640px) {
-        bottom: -6rem;
-      }
+      left: -6rem;
     }
 
     .img {

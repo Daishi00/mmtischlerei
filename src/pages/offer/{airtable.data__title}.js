@@ -100,7 +100,12 @@ export const query = graphql`
         }
       }
     }
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["translation", "offer-page", "category-page"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
