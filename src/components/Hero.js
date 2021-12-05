@@ -52,7 +52,7 @@ const Hero = lang => {
                 <Trans>Garderoby</Trans>
               </li>
             </ul>
-            <LinkButton text="Oferta" to="/offer" lang={lang} />
+            <LinkButton text="Zobacz więcej" to="/offer" lang={lang} />
           </article>
         </div>
         <div className="section-offer reverse">
@@ -88,13 +88,10 @@ const Hero = lang => {
                 <Trans>Renowacja</Trans>
               </li>
               <li>
-                <Trans>Potazacja</Trans>
-              </li>
-              <li>
-                <Trans>Kamieniowanie</Trans>
+                <Trans>Lakierowanie</Trans>
               </li>
             </ul>
-            <LinkButton text="Oferta" to="/offer" lang={lang} />
+            <LinkButton text="Zobacz więcej" to="/offer" lang={lang} />
           </article>
         </div>
       </Wrapper>
@@ -188,10 +185,7 @@ const Wrapper = styled.section`
         height: 100%;
 
         li {
-          font-size: 1rem;
-          @media screen and (min-width: 980px) {
-            font-size: 1.5rem;
-          }
+          font-size: 1.5rem;
         }
       }
     }

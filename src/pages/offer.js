@@ -41,7 +41,7 @@ const Offer = ({ data }) => {
           <Title title="Meble na wymiar" />
           <Project />
           <Category categories={categories} />
-          <Title title="Usługi stolarskie" />
+          {/* <Title title="Usługi stolarskie" /> */}
         </Wrapper>
       </Layout>
     </>
@@ -91,7 +91,7 @@ const Wrapper = styled.div`
   max-width: var(--max-width);
   place-items: center;
   align-items: center;
-  grid-gap: 2rem;
+  grid-gap: 3rem;
   margin: 0 auto 5rem auto;
 
   h1 {

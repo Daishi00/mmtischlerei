@@ -30,19 +30,18 @@ const Project = () => {
 }
 
 const Wrapper = styled.section`
-  width: 75%;
+  width: 80%;
   display: grid;
   place-items: center;
-  margin-bottom: 2rem;
 
   .project-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 20rem;
     display: grid;
     .img {
       width: 100%;
-      height: 20rem;
+      height: 100%;
       opacity: 0.2;
       border-radius: 5px;
     }
@@ -53,8 +52,12 @@ const Wrapper = styled.section`
       text-justify: inter-word;
       display: grid;
       grid-gap: 1rem;
-      padding: 2rem;
-      font-size: 1rem;
+      padding: 1rem;
+      font-size: 0.8rem;
+      @media screen and (min-width: 480px) {
+        font-size: 1rem;
+        padding: 2rem;
+      }
 
       @media screen and (min-width: 980px) {
         font-size: 1.2rem;

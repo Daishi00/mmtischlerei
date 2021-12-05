@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `M&M Tischlerei`,
-    description: ``,
+    description: `Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania`,
     titleTemplate: `%s | M&M Tischlerei`,
     url: `https://localhost:8000/`,
     image: `furniture.jpg`,

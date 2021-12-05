@@ -63,7 +63,7 @@ const Contact = ({ data }) => {
                 type="submit"
                 className="btn"
                 whileHover={{
-                  backgroundColor: "#e76f51",
+                  backgroundColor: "#7f5539",
                   transition: { duration: 0.2 },
                 }}
               >
@@ -120,12 +120,15 @@ const Wrapper = styled.section`
     box-shadow: var(--dark-shadow);
 
     .btn {
-      background-color: #f4a261;
+      background-color: var(--clr-primary-1);
       border: none;
       border-radius: 5px;
       font-size: 1.5rem;
-      color: var(--clr-grey-1);
+      color: var(--clr-primary-1);
       cursor: pointer;
+      color: #fff;
+      letter-spacing: 0.1rem;
+      height: 3rem;
     }
     label {
       display: block;

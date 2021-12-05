@@ -48,14 +48,9 @@ const Wrapper = styled.div`
   width: 70%;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  grid-auto-rows: 110px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 200px;
   grid-auto-flow: dense;
-
-  @media screen and (min-width: 480px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 150px;
-  }
 
   @media screen and (min-width: 620px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -91,20 +86,18 @@ const Wrapper = styled.div`
       border-radius: 0 0 5px 5px;
 
       p {
-        font-size: 0.5rem;
+        font-size: 1rem;
         font-weight: bold;
         text-align: center;
         letter-spacing: 0.05rem;
         border-radius: 0 0 5px 5px;
         margin: 0;
-        @media screen and (min-width: 480px) {
-          font-size: 0.7rem;
         }
         @media screen and (min-width: 620px) {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
         @media screen and (min-width: 920px) {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
         }
       }
     }

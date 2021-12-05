@@ -143,11 +143,16 @@ const Wrapper = styled.section`
     height: 100%;
     position: relative;
     margin-bottom: 4rem;
+
     h1 {
       text-transform: capitalize;
-      font-size: 4rem;
+      font-size: 2.5rem;
       border-bottom: var(--border-bottom);
       padding-bottom: 2rem;
+
+      @media screen and (min-width: 640px) {
+        font-size: 4rem;
+      }
     }
 
     p {

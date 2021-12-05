@@ -9,8 +9,8 @@ const LinkButton = ({ text, to, icon, lang }) => {
     <Link to={to}>
       <Wrapper
         whileHover={{
-          backgroundColor: "#e76f51",
-          scale: 1.05,
+          backgroundColor: "#7f5539",
+          scale: 1.02,
           transition: { duration: 0.2 },
         }}
       >
@@ -25,19 +25,18 @@ const LinkButton = ({ text, to, icon, lang }) => {
 const Wrapper = styled(motion.button)`
   width: auto;
   height: 3rem;
-  background: #f4a261;
-  padding: 0 1.5rem;
+  background: var(--clr-primary-1);
+  padding: 0 2rem;
   font-size: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border: none;
-  border-radius: 2rem;
-  font-weight: bold;
+  border-radius: 0.3rem;
   font-size: 1.5rem;
   cursor: pointer;
   letter-spacing: 0.1rem;
-  color: var(--clr-grey-1);
+  color: #fff;
   .icon {
     width: 2.5rem;
     height: auto;

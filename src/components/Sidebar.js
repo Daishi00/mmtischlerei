@@ -5,7 +5,7 @@ import { BsXLg } from "react-icons/bs"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 import { Trans } from "gatsby-plugin-react-i18next"
-
+import Social from "../components/Social"
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <AnimatePresence>
@@ -34,6 +34,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 )
               })}
             </ul>
+            <Social />
           </div>
         </Wrapper>
       )}

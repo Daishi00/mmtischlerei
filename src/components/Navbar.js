@@ -22,8 +22,8 @@ const Navbar = ({ toggleSidebar }) => {
         <div className="nav-contact">
           <div className="nav-contact-option">
             <BsFillTelephoneFill size={24} />
-            <p>+48 791 756 101</p>
-            <p>+48 503 586 040</p>
+            <a href="tel:+48 791 756 10">+48 791 756 10</a>
+            <a href="tel:+48 503 586 040">+48 503 586 040</a>
           </div>
           <div className="nav-contact-option">
             <BsFillEnvelopeFill size={24} />
@@ -80,6 +80,7 @@ const Wrapper = styled.nav`
         gap: 0.5rem;
         align-items: center;
 
+        a,
         p {
           font-size: 0.6rem;
           margin: 0;
