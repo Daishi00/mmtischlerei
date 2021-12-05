@@ -45,26 +45,28 @@ const GalleryImg = ({ dataSelected, data }) => {
     for (let i = 0; i < data.length; i++) {
       if (id === data[i].id) {
         if (i === data.length - 1) {
+          paginate(1)
           handleSelectImage(data[0])
         } else {
+          paginate(1)
           handleSelectImage(data[i + 1])
         }
       }
     }
-    return paginate(1)
   }
 
   const prevImage = (data, id) => {
     for (let i = 0; i < data.length; i++) {
       if (id === data[i].id) {
         if (i === 0) {
+          paginate(-1)
           handleSelectImage(data[data.length - 1])
         } else {
+          paginate(-1)
           handleSelectImage(data[i - 1])
         }
       }
     }
-    return paginate(-1)
   }
 
   const [[page, direction], setPage] = useState([0, 0])
