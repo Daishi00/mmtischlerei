@@ -84,7 +84,7 @@ const GalleryImg = ({ dataSelected, data }) => {
     <Wrapper>
       <Background onClick={() => handleSelectImage(null)} />
       <div className="img-container">
-        <AnimatePresence custom={direction} initial={false} exitBeforeEnter>
+        <AnimatePresence custom={direction} initial={false}>
           <motion.div
             className="img-motion"
             variants={imgVariants}
@@ -175,11 +175,11 @@ const Wrapper = styled.div`
     }
 
     .img-motion {
+      position: absolute;
       width: 100%;
       height: 25rem;
       display: grid;
       place-items: center;
-      z-index: 2002;
       @media screen and (min-width: 1020px) {
         height: 35rem;
       }
@@ -213,6 +213,7 @@ const Wrapper = styled.div`
         border: none;
         background: none;
         cursor: pointer;
+        z-index: 2003;
       }
       .icon {
         color: #fff;

@@ -12,7 +12,12 @@ const Contact = ({ data }) => {
   const { t } = useTranslation()
   return (
     <>
-      <Seo title={t("Kontakt")} />
+      <Seo
+        title={t("Kontakt")}
+        description={t(
+          "Zapraszamy do konktaktu telefonicznego, mailowego lub poprzez formularz."
+        )}
+      />
       <Layout data={data}>
         <Wrapper>
           <section className="contact-info">

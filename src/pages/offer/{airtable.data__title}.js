@@ -40,7 +40,7 @@ const CategoryTemplate = ({ data, location }) => {
 
   return (
     <>
-      <Seo title={t(title)} />
+      <Seo title={t(title)} description={t(description)} />
       <Layout data={data} location={location}>
         <Wrapper>
           <article className="category-info">
