@@ -28,9 +28,9 @@ const Hero = lang => {
               className="squareline bottom-left"
               alt="squareline"
             />
-            <h2>
+            <h1>
               <Trans>Produkcja mebli na wymiar</Trans>
-            </h2>
+            </h1>
             <ul>
               <li>
                 <Trans>Meble kuchenne</Trans>
@@ -74,9 +74,9 @@ const Hero = lang => {
               className="squareline bottom-left"
               alt="squareline"
             />
-            <h2>
+            <h1>
               <Trans>Usługi stolarskie</Trans>
-            </h2>
+            </h1>
             <ul>
               <li>
                 <Trans>Toczenie</Trans>
@@ -166,7 +166,7 @@ const Wrapper = styled.section`
         transform: rotate(180deg);
       }
 
-      h2 {
+      h1 {
         display: inline;
         font-size: 1.5rem;
         margin: 0;

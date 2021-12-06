@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
       <Seo
         title="Home"
         description={t(
-          "Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania. Garderoby, Meble biurowe, Meble kuchenne, Meble na poddasze, Meble łazienkowe, Schody oraz usługi stolarskie."
+          "Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania."
         )}
       />
       <Layout data={data}>
