@@ -25,18 +25,18 @@ const LinkButton = ({ text, to, icon, lang }) => {
 const Wrapper = styled(motion.button)`
   width: auto;
   height: 3rem;
-  background: var(--clr-primary-1);
+  background: var(--clr-primary-brown);
   padding: 0 2rem;
   font-size: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   font-size: 1.5rem;
   cursor: pointer;
   letter-spacing: 0.1rem;
-  color: #fff;
+  color: var(--clr-white);
   .icon {
     width: 2.5rem;
     height: auto;

@@ -7,7 +7,7 @@ module.exports = {
     title: `M&M Tischlerei`,
     description: `Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania`,
     titleTemplate: `%s | M&M Tischlerei`,
-    url: `https://localhost:8000/`,
+    url: `https://www.mmtischlerei.pl`,
     image: `furniture.jpg`,
   },
   plugins: [

@@ -66,7 +66,7 @@ const Wrapper = styled(motion.aside)`
     .exit-icon {
       width: 2rem;
       height: auto;
-      color: var(--clr-primary-1);
+      color: var(--clr-primary-brown);
     }
   }
 

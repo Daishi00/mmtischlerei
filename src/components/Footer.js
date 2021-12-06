@@ -12,7 +12,7 @@ const Footer = () => {
 
 const Wrapper = styled.footer`
   height: 8rem;
-  background-color: var(--clr-primary-1);
+  background-color: var(--clr-primary-brown);
   display: grid;
   margin-top: 2rem;
   place-items: center;
@@ -20,7 +20,7 @@ const Wrapper = styled.footer`
   p {
     margin: 0;
     letter-spacing: 0.2rem;
-    color: var(--clr-background-brown);
+    color: var(--clr-secondary-brown);
   }
 `
 

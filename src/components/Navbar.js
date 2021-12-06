@@ -22,12 +22,13 @@ const Navbar = ({ toggleSidebar }) => {
         <div className="nav-contact">
           <div className="nav-contact-option">
             <BsFillTelephoneFill size={24} />
-            <a href="tel:+48 791 756 10">+48 791 756 10</a>
-            <a href="tel:+48 503 586 040">+48 503 586 040</a>
+            <a href="tel:+48 791 756 101">+48 791 756 101</a>
           </div>
           <div className="nav-contact-option">
             <BsFillEnvelopeFill size={24} />
-            <p>mmtischlerei@gmail.com</p>
+            <a href="mailto:mmtischlereipl@gmail.com">
+              mmtischlereipl@gmail.com
+            </a>
           </div>
         </div>
       </div>
@@ -82,14 +83,11 @@ const Wrapper = styled.nav`
 
         a,
         p {
-          font-size: 0.6rem;
+          font-size: 0.7rem;
           margin: 0;
           font-weight: bold;
 
-          @media screen and (min-width: 480px) {
-            font-size: 0.8rem;
-          }
-          @media screen and (min-width: 980px) {
+          @media screen and (min-width: 640px) {
             font-size: 1rem;
           }
         }
@@ -107,7 +105,7 @@ const Wrapper = styled.nav`
     .burger {
       width: 2rem;
       height: auto;
-      color: var(--clr-primary-1);
+      color: var(--clr-primary-brown);
     }
     @media screen and (min-width: 980px) {
       display: none;
@@ -134,7 +132,7 @@ const Wrapper = styled.nav`
       transition: var(--transition);
 
       &:hover {
-        color: var(--clr-primary-1);
+        color: var(--clr-primary-brown);
         box-shadow: 0px 2px #b08968;
       }
     }

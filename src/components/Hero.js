@@ -90,6 +90,9 @@ const Hero = lang => {
               <li>
                 <Trans>Lakierowanie</Trans>
               </li>
+              <li>
+                <Trans> Montaże rozwiązań stolarskich</Trans>
+              </li>
             </ul>
             <LinkButton text="Zobacz więcej" to="/offer" lang={lang} />
           </article>
@@ -121,7 +124,7 @@ const Wrapper = styled.section`
     .img {
       margin: 0 auto;
       width: 100%;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       grid-row: 2;
       filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
       @media screen and (min-width: 980px) {
@@ -185,7 +188,7 @@ const Wrapper = styled.section`
         height: 100%;
 
         li {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
         }
       }
     }

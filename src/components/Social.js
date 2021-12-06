@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     .social-icon {
       width: 100%;
       height: 100%;
-      color: var(--clr-background-brown);
+      color: var(--clr-secondary-brown);
       transition: all 0.2s linear;
 
       &:hover {

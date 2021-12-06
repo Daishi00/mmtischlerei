@@ -10,7 +10,6 @@ import Seo from "../../components/Seo"
 
 const CategoryTemplate = ({ data, location }) => {
   const { description, title, image } = data.airtable.data
-  console.log(data.airtable.data)
 
   const nextCategory = (title, { nodes } = data.allAirtable) => {
     let nextCategory = ""
@@ -183,7 +182,7 @@ const Wrapper = styled.section`
     .img {
       height: 100%;
       width: 100%;
-      border-radius: 0.5rem;
+      border-radius: var(--border-radius);
     }
 
     .div-0 {

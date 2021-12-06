@@ -117,7 +117,7 @@ const Wrapper = styled.section`
       cursor: pointer;
       box-shadow: var(--dark-shadow);
       border: none;
-      border-radius: 5px;
+      border-radius: var(--border-radius);
       padding: 1rem;
 
       .img {

@@ -112,7 +112,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 1rem;
     z-index: 1000;
-    background-color: var(--clr-background-brown);
+    background-color: var(--clr-secondary-brown);
   }
   .img {
     width: 2rem;

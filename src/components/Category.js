@@ -5,7 +5,6 @@ import { Trans, Link } from "gatsby-plugin-react-i18next"
 import { motion } from "framer-motion"
 import slugify from "slugify"
 const Category = ({ categories }) => {
-  console.log(categories)
   return (
     <Wrapper>
       {categories.map(category => {
@@ -69,7 +68,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     box-shadow: var(--dark-shadow);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     grid-template-rows: 90% 13%;
 
     .img {
@@ -82,7 +81,7 @@ const Wrapper = styled.div`
       display: grid;
       place-items: center;
       height: auto;
-      background: var(--clr-background-brown);
+      background: var(--clr-secondary-brown);
       border-radius: 0 0 5px 5px;
 
       p {

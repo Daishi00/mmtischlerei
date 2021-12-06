@@ -118,12 +118,12 @@ const Wrapper = styled.div`
     .img {
       width: 100%;
       height: 90%;
-      border-radius: 0.5rem;
+      border-radius: var(--border-radius);
       opacity: 0.3;
     }
     .offer-info {
       position: absolute;
-      border-radius: 1rem;
+      border-radius: var(--border-radius);
       top: 0;
       left: 0;
       width: 100%;

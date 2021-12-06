@@ -162,7 +162,8 @@ const Wrapper = styled.div`
     display: grid;
     place-items: center;
     position: relative;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+
     @media screen and (min-width: 640px) {
       width: 25rem;
     }
@@ -201,7 +202,7 @@ const Wrapper = styled.div`
 
       h3 {
         margin: 0;
-        color: #fff;
+        color: var(--clr-white);
       }
     }
 
@@ -216,7 +217,7 @@ const Wrapper = styled.div`
         z-index: 2003;
       }
       .icon {
-        color: #fff;
+        color: var(--clr-white);
       }
     }
     .btn-next {
@@ -229,7 +230,7 @@ const Wrapper = styled.div`
     .img {
       width: 100%;
       height: 100%;
-      border-radius: 5px;
+      border-radius: var(--border-radius);
     }
   }
 `

@@ -11,9 +11,9 @@ Variables
 */
 
 :root {
-  --clr-primary-1: #b08968;
+  --clr-primary-brown: #b08968;
+  --clr-secondary-brown: #ede0d4;
   --clr-background-grey: #f3f4f6;
-  --clr-background-brown: #ede0d4;
 
   /* lighter shades of primary color */
   --clr-primary-6: hsl(21, 57%, 50%);
@@ -44,8 +44,9 @@ Variables
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --border-bottom: 2px solid var(--clr-primary-1);
-  --max-width: 1560px
+  --border-bottom: 2px solid var(--clr-primary-brown);
+  --border-radius: 5px;
+  --max-width: 1560px;
 }
 /*
 ===============

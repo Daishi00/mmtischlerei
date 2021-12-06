@@ -5,7 +5,7 @@ const data = [
   {
     id: 1,
     icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.facebook.com/MM-Tichlerei-111253636947361",
+    url: "https://www.facebook.com/MM-Tischlerei-106100201919094/",
   },
   {
     id: 5,
