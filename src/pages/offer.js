@@ -18,7 +18,12 @@ const Offer = ({ data }) => {
   const { t } = useTranslation()
   return (
     <>
-      <Seo title={t("Oferta")} />
+      <Seo
+        title={t("Oferta")}
+        description={t(
+          "Garderoby, Meble biurowe, Meble kuchenne, Meble na poddasze, Meble łazienkowe, Schody oraz usługi stolarskie."
+        )}
+      />
       <Layout data={data}>
         <Wrapper>
           <div className="img-container">

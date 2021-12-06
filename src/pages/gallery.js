@@ -20,7 +20,7 @@ const Gallery = ({ data }) => {
 
   return (
     <>
-      <Seo title={t("Galeria")} />
+      <Seo title={t("Galeria")} description={t("Nasze realizacje.")} />
       <Layout data={data}>
         <Wrapper>
           <Title title="Nasze realizacje" />

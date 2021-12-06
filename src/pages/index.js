@@ -3,11 +3,19 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
 import Seo from "../components/Seo"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const IndexPage = ({ data }) => {
+  const { t } = useTranslation()
+
   return (
     <>
-      <Seo title="Home" />
+      <Seo
+        title="Home"
+        description={t(
+          "Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania. Garderoby, Meble biurowe, Meble kuchenne, Meble na poddasze, Meble łazienkowe, Schody oraz usługi stolarskie."
+        )}
+      />
       <Layout data={data}>
         <Hero data={data} />
       </Layout>
