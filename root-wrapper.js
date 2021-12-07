@@ -65,7 +65,7 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  font-family: -apple-system, "poppins", sans-serif;
+  font-family:"poppins", -apple-system,sans-serif;
   margin: 0rem auto;
 }
 ul {
