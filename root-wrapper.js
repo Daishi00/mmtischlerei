@@ -51,10 +51,6 @@ Variables
 Global Styles
 ===============
 */
-@font-face {
-
-font-family: 'poppins';
-
 *,
 ::after,
 ::before {
@@ -68,8 +64,7 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  font-family: -apple-system,"poppins",sans-serif;
-  font-display: swap;
+  font-family: -apple-system,"Poppins",sans-serif;
   margin: 0rem auto;
 }
 ul {
