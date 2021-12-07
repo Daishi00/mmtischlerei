@@ -91,7 +91,7 @@ const Hero = lang => {
                 <Trans>Lakierowanie</Trans>
               </li>
               <li>
-                <Trans> Montaże rozwiązań stolarskich</Trans>
+                <Trans>Montaże rozwiązań stolarskich</Trans>
               </li>
             </ul>
             <LinkButton text="Zobacz więcej" to="/offer" lang={lang} />
