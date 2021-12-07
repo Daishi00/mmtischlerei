@@ -52,23 +52,23 @@ const Contact = ({ data }) => {
                   <label htmlFor="name">
                     <Trans>Twoje Imię</Trans>
                   </label>
-                  <input type="text" name="name" id="name" />
+                  <input type="text" name="name" id="name" required />
                 </div>
                 <div className="form-row">
                   <label htmlFor="email">Email</label>
-                  <input type="text" name="email" id="email" />
+                  <input type="text" name="email" id="email" required />
                 </div>
                 <div className="form-row">
                   <label htmlFor="email">
                     <Trans>Telefon</Trans>
                   </label>
-                  <input type="text" name="phone" id="phone" />
+                  <input type="text" name="phone" id="phone" required />
                 </div>
                 <div className="form-row">
                   <label htmlFor="message">
                     <Trans>Wiadomość</Trans>
                   </label>
-                  <textarea name="message" id="message"></textarea>
+                  <textarea name="message" id="message" required></textarea>
                 </div>
                 <motion.button
                   type="submit"
