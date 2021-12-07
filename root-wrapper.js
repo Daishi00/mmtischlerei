@@ -58,7 +58,6 @@ Global Styles
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, "poppins", sans-serif;
 
 }
 body {
@@ -66,6 +65,7 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
+  font-family: -apple-system, "poppins", sans-serif;
   margin: 0rem auto;
 }
 ul {
