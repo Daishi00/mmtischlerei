@@ -43,9 +43,9 @@ const CategoryTemplate = ({ data, location }) => {
       <Layout data={data} location={location}>
         <Wrapper>
           <article className="category-info">
-            <h1>
+            <h2>
               <Trans>{title}</Trans>
-            </h1>
+            </h2>
             <p>
               <Trans>{description}</Trans>
             </p>
@@ -143,20 +143,22 @@ const Wrapper = styled.section`
     position: relative;
     margin-bottom: 4rem;
 
-    h1 {
+    h2 {
       text-transform: capitalize;
+      text-align: center;
       font-size: 2.5rem;
       border-bottom: var(--border-bottom);
       padding-bottom: 2rem;
 
       @media screen and (min-width: 640px) {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
     }
 
     p {
       text-align: justify;
       text-justify: inter-word;
+      font-size: 1.2rem;
     }
     .btn-container {
       display: flex;

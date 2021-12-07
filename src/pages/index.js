@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
       <Seo
         title="Home"
         description={t(
-          "Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania."
+          "Stolarnia zlokalizowana w Gubinie oferująca meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania."
         )}
       />
       <Layout data={data}>

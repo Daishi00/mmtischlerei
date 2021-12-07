@@ -4,8 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { BsFillTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs"
 import pageLinks from "../constants/links"
 import { AiOutlineMenu } from "react-icons/ai"
-import { Link } from "gatsby"
-import { Trans } from "gatsby-plugin-react-i18next"
+import { Trans, Link } from "gatsby-plugin-react-i18next"
 
 import Language from "./Language"
 
@@ -13,22 +12,22 @@ const Navbar = ({ toggleSidebar }) => {
   return (
     <Wrapper>
       <div className="nav-header">
-        <StaticImage
-          src="../images/logo.jpg"
-          width={75}
-          height={75}
-          alt="logo"
-        />
+        <Link to="/">
+          <StaticImage
+            src="../images/logo.jpg"
+            width={75}
+            height={75}
+            alt="logo"
+          />
+        </Link>
         <div className="nav-contact">
           <div className="nav-contact-option">
             <BsFillTelephoneFill size={24} />
-            <a href="tel:+48 791 756 101">+48 791 756 101</a>
+            <p>+48 791 756 101</p>
           </div>
           <div className="nav-contact-option">
             <BsFillEnvelopeFill size={24} />
-            <a href="mailto:mmtischlereipl@gmail.com">
-              mmtischlereipl@gmail.com
-            </a>
+            <p>mmtischlereipl@gmail.com</p>
           </div>
         </div>
       </div>
@@ -69,7 +68,6 @@ const Wrapper = styled.nav`
     gap: 1rem;
     padding-bottom: 10px;
     border-bottom: var(--border-bottom);
-    z-index: -1001;
 
     .nav-contact {
       display: flex;
