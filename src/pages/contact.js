@@ -42,7 +42,7 @@ const Contact = ({ data }) => {
             <section>
               <form
                 className="form contact-form"
-                action="https://formspree.io/f/mdobnvan"
+                action={process.env.GATSBY_FORM_KEY}
                 method="POST"
               >
                 <h2>
