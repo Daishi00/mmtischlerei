@@ -5,10 +5,10 @@ import styled from "styled-components"
 
 const defaultProps = {
   center: {
-    lat: 51.9631708595218,
-    lng: 14.796754146129132,
+    lat: 51.961025,
+    lng: 14.776403,
   },
-  zoom: 13,
+  zoom: 14,
 }
 
 const GoogleMap = () => (
@@ -17,8 +17,13 @@ const GoogleMap = () => (
       bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLEMAPS_API }}
       defaultCenter={defaultProps.center}
       defaultZoom={defaultProps.zoom}
+      yesIWantToUseGoogleMapApiInternals
     >
-      <GooglePin lat={51.962895} lng={14.793523} text={"M&M Tischlerei"} />
+      <GooglePin
+        lat={51.96317526929887}
+        lng={14.796558939908518}
+        text={"M&M Tischlerei"}
+      />
     </GoogleMapReact>
   </Wrapper>
 )
