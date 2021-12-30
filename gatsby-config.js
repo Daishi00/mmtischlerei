@@ -2,18 +2,42 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const siteUrl = "https://www.mmtischlerei.pl"
+
 module.exports = {
   siteMetadata: {
     title: `M&M Tischlerei`,
     description: `Meble na wymiar i usługi stolarskie. Najlepsza jakość materiałów i szybkość wykonania`,
     titleTemplate: `%s | M&M Tischlerei`,
-    url: `https://www.mmtischlerei.pl`,
+    siteUrl: "https://www.mmtischlerei.pl",
     image: `furniture.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-transition-link`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        excludes: [
+          "/404",
+          "/de/404.html",
+          "/en/404.html",
+          "/de/404/",
+          "/en/404/",
+        ],
+        resolveSiteUrl: () => siteUrl,
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,

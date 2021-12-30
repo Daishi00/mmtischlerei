@@ -20,7 +20,7 @@ const SEO = ({ title, description, image }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
+    siteUrl: `${siteUrl}${pathname}`,
   }
 
   return (
@@ -32,7 +32,7 @@ const SEO = ({ title, description, image }) => {
       />
       <meta name="image" content={seo.image} />
 
-      {seo.url && <meta property="og:url" content={seo.url} />}
+      {seo.siteUrl && <meta property="og:url" content={seo.siteUrl} />}
 
       {seo.title && <meta property="og:title" content={seo.title} />}
 
@@ -68,7 +68,7 @@ const query = graphql`
         defaultTitle: title
         titleTemplate
         defaultDescription: description
-        siteUrl: url
+        siteUrl: siteUrl
         defaultImage: image
       }
     }
