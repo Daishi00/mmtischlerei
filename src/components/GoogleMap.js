@@ -8,7 +8,7 @@ const defaultProps = {
     lat: 51.961025,
     lng: 14.776403,
   },
-  zoom: 14,
+  zoom: 13,
 }
 
 const GoogleMap = () => (

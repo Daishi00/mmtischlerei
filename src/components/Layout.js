@@ -14,7 +14,11 @@ const Layout = ({ children, data }) => {
     <>
       <Navbar toggleSidebar={toggleSidebar} data={data} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} data={data} />
-      <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <motion.main
+        key={children}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         {children}
       </motion.main>
       <Footer data={data} />

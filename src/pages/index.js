@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
 import Seo from "../components/Seo"
+import { AnimatePresence, motion } from "framer-motion"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const IndexPage = ({ data }) => {

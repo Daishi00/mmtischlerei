@@ -2,7 +2,7 @@ import React from "react"
 import { createGlobalStyle } from "styled-components"
 import { GatsbyProvider } from "./src/context/context"
 import "@fontsource/poppins"
-
+import { AnimatePresence } from "framer-motion"
 const GlobalStyle = createGlobalStyle`
 /*
 ===============
@@ -134,8 +134,10 @@ p {
 export const wrapRootElement = ({ element }) => {
   return (
     <>
-      <GatsbyProvider>{element}</GatsbyProvider>
       <GlobalStyle />
+      <GatsbyProvider>
+        <AnimatePresence exitBeforeEnter>{element} </AnimatePresence>
+      </GatsbyProvider>
     </>
   )
 }
