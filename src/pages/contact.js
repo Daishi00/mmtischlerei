@@ -30,7 +30,9 @@ const Contact = ({ data }) => {
               <p>+48 791 756 101</p>
               <h4>E-mail:</h4>
               <p>mmtischlereipl@gmail.com</p>
-              <h4>Dane firmy:</h4>
+              <h4>
+                <Trans>Dane firmy:</Trans>
+              </h4>
               <p>
                 M&M Tischlerei S.C. Tomasz Dolecki, Andrzej Abramczyk
                 <br />

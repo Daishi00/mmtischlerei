@@ -10,7 +10,7 @@ import Seo from "../../components/Seo"
 
 const CategoryTemplate = ({ data, location }) => {
   const { description, title, image } = data.airtable.data
-
+  console.log(data.airtable.data)
   const nextCategory = (title, { nodes } = data.allAirtable) => {
     let nextCategory = ""
     for (let i = 0; i < nodes.length; i++) {
