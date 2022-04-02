@@ -11,7 +11,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GalleryImg from "../components/GalleryImg"
 import { useContext } from "react"
 import { GatsbyContext } from "../context/context"
-import { MdOutlineLoupe } from "react-icons/md"
 
 const Gallery = ({ data }) => {
   const { nodes: gallery } = data.allAirtableGallery
@@ -45,10 +44,9 @@ const Gallery = ({ data }) => {
                     onClick={() => handleSelectImage(item)}
                   />
                   <div className="img-info ">
-                    <MdOutlineLoupe size={64} />
-                    <h4>
+                    <h3>
                       <Trans i18nKey={title}>{title}</Trans>
-                    </h4>
+                    </h3>
                   </div>
                 </button>
               )
@@ -118,11 +116,12 @@ const Wrapper = styled.section`
       box-shadow: var(--dark-shadow);
       border: none;
       border-radius: var(--border-radius);
-      padding: 1rem;
 
       .img {
         width: 100%;
         height: 100%;
+        border-radius: var(--border-radius);
+        transition: opacity 0.3s ease-in-out;
       }
       &:hover .img {
         opacity: 0.3;
@@ -132,12 +131,15 @@ const Wrapper = styled.section`
         position: absolute;
         width: 100%;
         height: 100%;
-        display: grid;
-        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: "Poppins";
         opacity: 0;
-
-        h4 {
+        transition: opacity 0.3s ease-in-out;
+        h3 {
           text-transform: capitalize;
+          font-size: 1.5rem;
         }
       }
       &:hover .img-info {

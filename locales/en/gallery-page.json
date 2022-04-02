@@ -1,9 +1,8 @@
 {
-  "Galeria": "Gallery",
-  "Nasze realizacje": "Our work",
-  "Szafa": "Wardrobe",
-  "Kuchnia": "Kitchen",
-  "Łazienka": "Bathroom",
-  "Biuro": "Office",
-  "Stołki": "Tables"
+  "Nasze realizacje": "Our Work",
+  "garderoba": "Wardrobe",
+  "kuchnia": "Kitchen",
+  "łazienka": "Bathroom",
+  "biuro": "Office",
+  "stołki": "Tables"
 }

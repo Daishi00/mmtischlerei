@@ -20,8 +20,8 @@ const Category = ({ categories }) => {
             <motion.div
               className="category-container"
               whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.5 },
+                scale: 1.02,
+                transition: { duration: 0.3 },
               }}
               whileTap={{ scale: 1 }}
             >

@@ -5,7 +5,6 @@ import { BsFillTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs"
 import pageLinks from "../constants/links"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Trans, Link } from "gatsby-plugin-react-i18next"
-
 import Language from "./Language"
 
 const Navbar = ({ toggleSidebar }) => {

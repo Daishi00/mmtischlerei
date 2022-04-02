@@ -1,8 +1,8 @@
 {
   "Nasze realizacje": "Unsere Arbeit",
-  "Szafa": "Wardrobe",
-  "Kuchnia": "Kitchen",
-  "Łazienka": "Bathroom",
-  "Biuro": "Office",
-  "Stołki": "Tables"
+  "garderoba": "Kleiderschränke",
+  "kuchnia": "Küche",
+  "łazienka": "Badezimmer",
+  "biuro": "Büro",
+  "stołki": "Hocker"
 }
